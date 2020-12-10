@@ -1,6 +1,9 @@
 .TodoInput {
   display: flex;
-  border-bottom: 2px solid black;
+
+  & > * {
+    box-shadow: 0px -2px 3px #aaa, 0px 2px 3px #aaa;
+  }
 
   input {
     outline: none;

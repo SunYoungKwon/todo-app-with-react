@@ -2,11 +2,12 @@
   width: 512px;
   margin: 6em auto 0 auto;
   border-radius: 4px;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 
   .app-title {
-    background: black;
-    color: white;
+    background: rgb(179, 179, 171);
+    color: rgb(84, 82, 78);
     height: 4rem;
     font-size: 1.5rem;
     font-weight: bold;
