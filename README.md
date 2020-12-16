@@ -4,7 +4,9 @@
 
 ## 구현 결과
 
-![todo_app](./image/todo_app.JPG)
+<p align="center">
+  <img src="./image/todo_app.JPG" alt="todo app">
+</p>
 
 ## 실행 방법
 
