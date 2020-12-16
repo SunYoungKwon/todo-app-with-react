@@ -1,7 +1,29 @@
 .TodoList {
   min-width: 513px;
+  max-height: 70vh;
   padding: 0;
   margin: 0;
   list-style: none;
   overflow-y: auto;
+  overflow-x: hidden;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f0f0ef;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #b3b3ab;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #54524e;
+  }
 }
