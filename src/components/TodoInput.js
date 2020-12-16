@@ -18,6 +18,7 @@ const TodoInput = ({ onAddTodo }) => {
         alert('할 일을 입력해주세요!');
       }
 
+      e.target.firstElementChild.focus();
       e.preventDefault(); // submit 이벤트의 새로고침 방지
     },
     [onAddTodo, value],
