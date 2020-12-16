@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { MdAdd } from 'react-icons/md';
 import './TodoInput.scss';
 
-const TodoInput = ({ onAddTodo }) => {
+const TodoInput = ({ onInsert }) => {
   const [value, setValue] = useState('');
 
   const onChange = useCallback((e) => {
@@ -12,7 +12,7 @@ const TodoInput = ({ onAddTodo }) => {
   const onSubmit = useCallback(
     (e) => {
       if (value) {
-        onAddTodo(value);
+        onInsert(value);
         setValue('');
       } else {
         alert('할 일을 입력해주세요!');
@@ -21,7 +21,7 @@ const TodoInput = ({ onAddTodo }) => {
       e.target.firstElementChild.focus();
       e.preventDefault(); // submit 이벤트의 새로고침 방지
     },
-    [onAddTodo, value],
+    [onInsert, value],
   );
 
   return (

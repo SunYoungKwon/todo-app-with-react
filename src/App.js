@@ -3,58 +3,47 @@ import TodoTemplate from './components/TodoTemplate';
 import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
 
+const createBulkTodos = (numOfTodo) => {
+  const todos = [];
+
+  for (let i = 0; i < numOfTodo; i++) {
+    todos.push({
+      id: i,
+      text: `Todo ${i}`,
+      checked: false,
+    });
+  }
+
+  return todos;
+};
+
 const App = () => {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: 'Study Javascript',
-      checked: true,
-    },
-    {
-      id: 2,
-      text: 'Study React',
-      checked: false,
-    },
-    {
-      id: 3,
-      text: 'Study Typescript',
-      checked: false,
-    },
-  ]);
+  const [todos, setTodos] = useState(createBulkTodos(2500));
 
   const nextId = useRef(4);
 
-  const onAddTodo = useCallback(
-    (text) => {
-      const todo = {
-        id: nextId.current,
-        text,
-        checked: false,
-      };
+  const onInsert = useCallback((text) => {
+    const todo = {
+      id: nextId.current,
+      text,
+      checked: false,
+    };
 
-      setTodos(todos.concat(todo));
-      nextId.current++;
-    },
-    [todos],
-  );
+    setTodos((todos) => todos.concat(todo));
+    nextId.current++;
+  }, []);
 
-  const onRemove = useCallback(
-    (id) => {
-      setTodos(todos.filter((todo) => todo.id !== id));
-    },
-    [todos],
-  );
+  const onRemove = useCallback((id) => {
+    setTodos((todos) => todos.filter((todo) => todo.id !== id));
+  }, []);
 
-  const onToggle = useCallback(
-    (id) => {
-      setTodos(todos.map((todo) => (todo.id === id ? { ...todo, checked: !todo.checked } : todo)));
-    },
-    [todos],
-  );
+  const onToggle = useCallback((id) => {
+    setTodos((todos) => todos.map((todo) => (todo.id === id ? { ...todo, checked: !todo.checked } : todo)));
+  }, []);
 
   return (
     <TodoTemplate>
-      <TodoInput onAddTodo={onAddTodo} />
+      <TodoInput onInsert={onInsert} />
       <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
     </TodoTemplate>
   );
