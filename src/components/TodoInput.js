@@ -11,8 +11,12 @@ const TodoInput = ({ onAddTodo }) => {
 
   const onSubmit = useCallback(
     (e) => {
-      onAddTodo(value);
-      setValue('');
+      if (value) {
+        onAddTodo(value);
+        setValue('');
+      } else {
+        alert('할 일을 입력해주세요!');
+      }
 
       e.preventDefault(); // submit 이벤트의 새로고침 방지
     },
