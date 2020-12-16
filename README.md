@@ -10,6 +10,7 @@
 
 ```
 $ git clone https://github.com/tunaep5/todo-app-with-react.git
+$ cd todo-app-with-react
 
 $ yarn install
 $ yarn start
