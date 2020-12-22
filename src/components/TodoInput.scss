@@ -3,6 +3,7 @@
 
   & > * {
     box-shadow: 0px -2px 3px #aaa, 0px 2px 3px #aaa;
+    z-index: 1;
   }
 
   input {
