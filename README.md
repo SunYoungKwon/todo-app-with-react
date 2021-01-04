@@ -8,12 +8,23 @@
   <img src="./image/todo_app.JPG" alt="todo app">
 </p>
 
+## 학습 내용
+
+- **React Hooks**
+  - `useState`
+  - `useCallback`
+  - `useRef`
+  - `useReducer`
+- **SCSS**
+- 최적화하기
+  - 크롬 개발자 도구의 **Performance**탭 사용하기
+  - `useState`의 함수형 업데이트
+  - **react-virtualized**의 `<List>`
+  - `React.memo()`
+
 ## 실행 방법
 
 ```
-$ git clone https://github.com/tunaep5/todo-app-with-react.git
-$ cd todo-app-with-react
-
 $ yarn install
 $ yarn start
 ```
